@@ -23,7 +23,8 @@ public class ChangeCutlery : MonoBehaviour {
         {
             cutlery[index].SetActive(true);
             utils.displayedObjectPrefab = cutprefabs[index];
-
+            XAPIStatement statement = new XAPIStatement(Settings.username, "mailto:" + Settings.email, "placed", "https://w3id.org/xapi/dod-isd/verbs/placed", "http:∕∕adlnet.gov∕expapi∕activities∕DinnerTable", cutprefabs[index].name, "Placed object");
+            Settings.instance.SEND(statement);
             index++;
         }
     }

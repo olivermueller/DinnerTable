@@ -24,7 +24,7 @@ public class Settings : MonoBehaviour {
 
         if (instance == null)
         {
-            
+
             if (PlayerPrefs.GetString("Name").Length > 0 && PlayerPrefs.GetString("Email").Length > 0)
             {
                 username = PlayerPrefs.GetString("Name");

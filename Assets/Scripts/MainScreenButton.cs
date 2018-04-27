@@ -15,8 +15,8 @@ public class MainScreenButton : MonoBehaviour
     }
     public void SendInfo()
     {
-        Settings.username = GameObject.FindGameObjectWithTag("Username").transform.GetChild(2).GetComponent<Text>().text;
-        Settings.email = GameObject.FindGameObjectWithTag("Email").transform.GetChild(2).GetComponent<Text>().text;
+        Settings.username = GameObject.FindGameObjectWithTag("UsernameText").GetComponent<Text>().text;
+        Settings.email = GameObject.FindGameObjectWithTag("EmailText").GetComponent<Text>().text;
         Debug.Log(Settings.email);
         Debug.Log(Settings.username);
         if (emailChecker.IsValidEmail(Settings.email))

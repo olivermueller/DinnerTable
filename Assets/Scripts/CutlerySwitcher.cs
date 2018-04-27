@@ -109,6 +109,8 @@ public class CutlerySwitcher : MonoBehaviour {
             if (cutlery.index == cutlery.cutlery.Length)
             {
                 nextText.text = "Well done!".Translate();
+                XAPIStatement statement = new XAPIStatement(Settings.username, "mailto:" + Settings.email, "completed", "https://w3id.org/xapi/dod-isd/verbs/completed", "http:∕∕adlnet.gov∕expapi∕activities∕DinnerTable", Settings.instance.currentScenario, "Started Dinner Table");
+                GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>().enabled = true;
             }
             else{
                 cutlery.switchCutlery();

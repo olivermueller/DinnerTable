@@ -10,6 +10,7 @@ public class Settings : MonoBehaviour {
 
     public static Settings instance = null;
     public string tableToLoad;
+    public string currentScenario = "";
     public string gameScene = "DiningTable";
     public string mainMenuScene = "MainScene";
     public static string username = "";
@@ -23,8 +24,18 @@ public class Settings : MonoBehaviour {
 
         if (instance == null)
         {
-           
-            //FindObjectOfType<Canvas>().enabled = false;
+            
+            if (PlayerPrefs.GetString("Name").Length > 0 && PlayerPrefs.GetString("Email").Length > 0)
+            {
+                username = PlayerPrefs.GetString("Name");
+                email = PlayerPrefs.GetString("Email");
+            }
+            else
+            {
+
+                GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>().enabled = false;
+                GameObject.FindGameObjectWithTag("UsernameCanvas").GetComponent<Canvas>().enabled = true;
+            }
             instance = this;
         }
         else if (instance != this)

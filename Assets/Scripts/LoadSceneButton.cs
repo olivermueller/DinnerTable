@@ -48,6 +48,7 @@ public class LoadSceneButton : MonoBehaviour, IPointerUpHandler, IPointerDownHan
         if (isDragging == false)
         {
             Settings.instance.tableToLoad = tableToLoad;
+            Settings.instance.currentScenario = tableTitle;
             XAPIStatement statement = new XAPIStatement(Settings.username, "mailto:" + Settings.email, "selected", "https:∕∕w3id.org∕xapi∕dod-isd∕verbs∕chose", "http:∕∕adlnet.gov∕expapi∕activities∕DinnerTable", "theme:" + tableTitle, "Started Dinner Table");
             Settings.instance.SEND(statement);
             SceneManager.LoadScene(Settings.instance.gameScene);

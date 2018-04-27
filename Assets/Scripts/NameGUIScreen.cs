@@ -12,7 +12,7 @@ public class NameGUIScreen : MonoBehaviour {
     {
         emailChecker = new RegexUtilities();
         
-        keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+        
     }
     private TouchScreenKeyboard keyboard;
     
@@ -20,6 +20,7 @@ public class NameGUIScreen : MonoBehaviour {
     {
         if (Settings.showEmailGUI)
         {
+            keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
             GUI.skin.label.fontSize = GUI.skin.button.fontSize = GUI.skin.textField.fontSize = 40;
             Rect nameInputRect = new Rect(Screen.width / 2 - 200, Screen.height / 2 - 90, 400, 100);
 

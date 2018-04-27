@@ -12,7 +12,8 @@ public class Settings : MonoBehaviour {
     public string tableToLoad;
     public string gameScene = "DiningTable";
     public string mainMenuScene = "MainScene";
-
+    public static string username = "";
+    public static string email;
     private XAPIStatement statement;
     public static List<string> languageBase;
     void Awake()

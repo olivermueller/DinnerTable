@@ -35,6 +35,7 @@ public class ScrollView : MonoBehaviour {
             t[1].text = pagesInfo[i].infoText.Translate();
             transform.GetChild(i).GetComponentInChildren<Button>().gameObject.GetComponent<LoadSceneButton>().tableToLoad = pagesInfo[i].tableName;
 
+            transform.GetChild(i).GetComponentInChildren<Button>().gameObject.GetComponent<LoadSceneButton>().tableTitle = pagesInfo[i].titleText;
             transform.GetChild(i).GetComponentsInChildren<Image>()[1].sprite = pagesInfo[i].image;
 
         }

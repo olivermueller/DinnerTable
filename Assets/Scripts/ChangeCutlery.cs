@@ -23,6 +23,7 @@ public class ChangeCutlery : MonoBehaviour {
         {
             cutlery[index].SetActive(true);
             utils.displayedObjectPrefab = cutprefabs[index];
+
             index++;
         }
     }

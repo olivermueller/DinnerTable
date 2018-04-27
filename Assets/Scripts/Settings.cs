@@ -14,18 +14,21 @@ public class Settings : MonoBehaviour {
     public string mainMenuScene = "MainScene";
     public static string username = "";
     public static string email="";
+    public static bool showEmailGUI = true;
     private XAPIStatement statement;
     public static List<string> languageBase;
     void Awake()
     {
 
-       
-        if (instance == null)
-            instance = this;
 
+        if (instance == null)
+        {
+            FindObjectOfType<Canvas>().enabled = false;
+            instance = this;
+        }
         else if (instance != this)
 
-        Destroy(gameObject);
+            Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
 

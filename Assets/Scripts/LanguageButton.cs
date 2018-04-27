@@ -43,11 +43,10 @@ public class LanguageButton : MonoBehaviour
         else
         {
             isUsed = false;
-
-
             GameObject newLang = subMenu.transform.parent.GetChild(0).gameObject;
+            XAPIStatement statement = new XAPIStatement(Settings.username, "mailto:" + Settings.email, "selected", "https:∕∕w3id.org∕xapi∕dod-isd∕verbs∕chose", "http:∕∕adlnet.gov∕expapi∕activities∕DinnerTable", "Language:" + buttonLanguage.ToString(), "Started Dinner Table");
+            Settings.instance.SEND(statement);
 
-            
 
             LanguageButton langButtonScript = newLang.GetComponent<LanguageButton>();
             Sprite spriteObj = newLang.GetComponent<Image>().sprite;
@@ -81,8 +80,10 @@ public class LanguageButton : MonoBehaviour
     IEnumerator WaitForAnimation()
     {
         //yield return new WaitForSeconds(0.5f);
+        GetComponent<Button>().interactable = false;
         yield return new WaitUntil(()=>subMenu.transform.GetChild(subMenu.transform.childCount -1).GetComponent<RectTransform>().sizeDelta.x<=1);
 
+        GetComponent<Button>().interactable = true;
         for (int i = 0; i < subMenu.transform.childCount; i++)
         {
             subMenu.transform.GetChild(i).GetComponent<RectTransform>().sizeDelta = new Vector2(55, 55);

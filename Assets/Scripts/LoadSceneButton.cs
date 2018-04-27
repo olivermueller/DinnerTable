@@ -8,12 +8,14 @@ public class LoadSceneButton : MonoBehaviour, IPointerUpHandler, IPointerDownHan
 {
 
     public string tableToLoad;
-
+    public string tableTitle;
     bool isDragging = false;
 
 
     public void BackToMain()
     {
+        XAPIStatement statement = new XAPIStatement(Settings.username, "mailto:" + Settings.email, "selected", "https:∕∕w3id.org∕xapi∕dod-isd∕verbs∕chose", "http:∕∕adlnet.gov∕expapi∕activities∕DinnerTable", "Main Screen", "Went to main screen");
+        Settings.instance.SEND(statement);
         SceneManager.LoadScene(Settings.instance.mainMenuScene);
     }
 
@@ -39,16 +41,15 @@ public class LoadSceneButton : MonoBehaviour, IPointerUpHandler, IPointerDownHan
         isDragging = false;
     }
 
+
     IEnumerator CheckDrag()
     {
         yield return new WaitForSeconds(0.2f);
         if (isDragging == false)
         {
             Settings.instance.tableToLoad = tableToLoad;
-
-            XAPIStatement statement = new XAPIStatement("Peter Sommerauer", "mailto:peter@sommerauer.li", "downloaded", "http://id.tincanapi.com/verb/downloaded", "http://activitystrea.ms/schema/1.0/application", "application", "downloaded Quiz-App");
+            XAPIStatement statement = new XAPIStatement(Settings.username, "mailto:" + Settings.email, "selected", "https:∕∕w3id.org∕xapi∕dod-isd∕verbs∕chose", "http:∕∕adlnet.gov∕expapi∕activities∕DinnerTable", "theme:" + tableTitle, "Started Dinner Table");
             Settings.instance.SEND(statement);
-
             SceneManager.LoadScene(Settings.instance.gameScene);
             
         }

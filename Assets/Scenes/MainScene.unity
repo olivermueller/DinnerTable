@@ -2539,13 +2539,13 @@ MonoBehaviour:
     infoText: 'Usually for family dinners, holidays, weddings and semi-formal events.
       Includes: dinner and fork; salad plate and fork; knife; bread and butter plate;
       butter knife; spoon; water and wine stemware; and linens.'
-    image: {fileID: 21300000, guid: 99fe20bc423b4194697d2fe8f0e26c8b, type: 3}
+    image: {fileID: 21300000, guid: 2a518b57c53b72b4996b79afbcbb33b3, type: 3}
   - tableName: Table3
     titleText: Buffet Setting
     infoText: 'It is designed for everyday use. Includes: dinner plate and fork; salad
       plate and fork; knife; spoon; water and/or wine glasses; and linens'
     image: {fileID: 21300000, guid: 99fe20bc423b4194697d2fe8f0e26c8b, type: 3}
-  scrollSpeed: 12
+  scrollSpeed: 10
 --- !u!1 &1251253811
 GameObject:
   m_ObjectHideFlags: 0
@@ -3026,6 +3026,16 @@ Prefab:
         type: 2}
       propertyPath: m_LocalScale.z
       value: 0.580348
+      objectReference: {fileID: 0}
+    - target: {fileID: 114984055095085904, guid: cc9b7b181752a2941a69b1d39e722553,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 114984055095085904, guid: cc9b7b181752a2941a69b1d39e722553,
+        type: 2}
+      propertyPath: m_Type
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc9b7b181752a2941a69b1d39e722553, type: 2}

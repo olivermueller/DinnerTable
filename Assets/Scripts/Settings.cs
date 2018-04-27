@@ -24,7 +24,7 @@ public class Settings : MonoBehaviour {
         if (instance == null)
         {
            
-            FindObjectOfType<Canvas>().enabled = false;
+            //FindObjectOfType<Canvas>().enabled = false;
             instance = this;
         }
         else if (instance != this)

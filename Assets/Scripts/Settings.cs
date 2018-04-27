@@ -24,11 +24,13 @@ public class Settings : MonoBehaviour {
 
         if (instance == null)
         {
-
+            instance = this;
             if (PlayerPrefs.GetString("Name").Length > 0 && PlayerPrefs.GetString("Email").Length > 0)
             {
                 username = PlayerPrefs.GetString("Name");
                 email = PlayerPrefs.GetString("Email");
+                XAPIStatement statement = new XAPIStatement(username, "mailto:" + email, "started", "http:∕∕adlnet.gov∕expapi∕verbs∕initialized", "http:∕∕adlnet.gov∕expapi∕activities∕DinnerTable", "Dinner Table", "Started Dinner Table");
+                SEND(statement);
             }
             else
             {
@@ -36,7 +38,7 @@ public class Settings : MonoBehaviour {
                 GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>().enabled = false;
                 GameObject.FindGameObjectWithTag("UsernameCanvas").GetComponent<Canvas>().enabled = true;
             }
-            instance = this;
+            
         }
         else if (instance != this)
 

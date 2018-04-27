@@ -13,14 +13,13 @@ public class Settings : MonoBehaviour {
     public string gameScene = "DiningTable";
     public string mainMenuScene = "MainScene";
     public static string username = "";
-    public static string email;
+    public static string email="";
     private XAPIStatement statement;
     public static List<string> languageBase;
     void Awake()
     {
 
-        statement = new XAPIStatement("Leo", "mailto:leom@itu.dk", "started", "http:∕∕adlnet.gov∕expapi∕verbs∕initialized", "http:∕∕adlnet.gov∕expapi∕activities∕DinnerTable", "Dinner Table", "Started Dinner Table");
-        SEND(statement);
+       
         if (instance == null)
             instance = this;
 

@@ -19,7 +19,7 @@ public class ScrollView : MonoBehaviour {
 
     public int scrollSpeed;
 
-    Vector2 initialSize;
+    //Vector2 initialSize;
     int currentlyFocused=0;
     int totalElements;
     private void Start()
@@ -39,9 +39,9 @@ public class ScrollView : MonoBehaviour {
             transform.GetChild(i).GetComponentsInChildren<Image>()[1].sprite = pagesInfo[i].image;
 
         }
-
+        transform.GetChild(0).GetComponent<Animator>().SetBool("animateUp", true);
         totalElements = transform.childCount;
-        initialSize = transform.GetChild(0).GetComponent<RectTransform>().sizeDelta;
+        //initialSize = transform.GetChild(0).GetComponent<RectTransform>().sizeDelta;
     }
 
     bool hasSwiped = false, isChangingSize = false;
@@ -52,6 +52,7 @@ public class ScrollView : MonoBehaviour {
     private void Awake()
     {
         Application.targetFrameRate = 60;
+
     }
     float dist = 0;
     private void Update()
@@ -85,7 +86,7 @@ public class ScrollView : MonoBehaviour {
         }
         if (isChangingSize)
         {
-            ChangeSize(transform.GetChild(currentlyFocused).GetComponent<RectTransform>());
+            //ChangeSize(transform.GetChild(currentlyFocused).GetComponent<RectTransform>());
         }
     }
 
@@ -104,6 +105,7 @@ public class ScrollView : MonoBehaviour {
             if (rectTrans.anchoredPosition.x < 60 && rectTrans.anchoredPosition.x > -60)
             {
                 isChangingSize = true;
+                transform.GetChild(i).GetComponent<Animator>().SetBool("animateUp", true);
                 transform.GetChild(i).GetComponentInChildren<Button>().interactable = true;
                 currentlyFocused = i;
                 if (rectTrans.anchoredPosition.x< 5 && rectTrans.anchoredPosition.x >-5)
@@ -114,8 +116,9 @@ public class ScrollView : MonoBehaviour {
             }
             else
             {
-                rectTrans.sizeDelta = initialSize;
+                //rectTrans.sizeDelta = initialSize;
                 transform.GetChild(i).GetComponentInChildren<Button>().interactable = false;
+                transform.GetChild(i).GetComponent<Animator>().SetBool("animateUp", false);
             }
 
 
@@ -130,8 +133,8 @@ public class ScrollView : MonoBehaviour {
 
     void ChangeSize(RectTransform trans)
     {
-        if(trans.sizeDelta.x < initialSize.x + initialSize.x*0.2f)
-            trans.sizeDelta += new Vector2(Time.deltaTime*Mathf.Clamp(dist, 0, 10)*500, Time.deltaTime*Mathf.Clamp(dist, 0, 10)*500);
+        //if(trans.sizeDelta.x < initialSize.x + initialSize.x*0.2f)
+          //  trans.sizeDelta += new Vector2(Time.deltaTime*Mathf.Clamp(dist, 0, 10)*500, Time.deltaTime*Mathf.Clamp(dist, 0, 10)*500);
 
     }
 

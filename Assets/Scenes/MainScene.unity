@@ -1738,6 +1738,28 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224178953502169522, guid: cc9b7b181752a2941a69b1d39e722553,
     type: 2}
   m_PrefabInternal: {fileID: 1396493117}
+--- !u!1 &897631731 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1602284412037704, guid: cc9b7b181752a2941a69b1d39e722553,
+    type: 2}
+  m_PrefabInternal: {fileID: 557526075}
+--- !u!95 &897631732
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 897631731}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 899e1357168237c49ad3f8973db95c97, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &933958822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,6 +1795,28 @@ RectTransform:
   m_AnchoredPosition: {x: 189, y: -24.465}
   m_SizeDelta: {x: 378, y: 48.93}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &986285195 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1602284412037704, guid: cc9b7b181752a2941a69b1d39e722553,
+    type: 2}
+  m_PrefabInternal: {fileID: 1396493117}
+--- !u!95 &986285196
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 986285195}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 899e1357168237c49ad3f8973db95c97, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &998193059
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,7 +2545,7 @@ MonoBehaviour:
     infoText: 'It is designed for everyday use. Includes: dinner plate and fork; salad
       plate and fork; knife; spoon; water and/or wine glasses; and linens'
     image: {fileID: 21300000, guid: 99fe20bc423b4194697d2fe8f0e26c8b, type: 3}
-  scrollSpeed: 1000
+  scrollSpeed: 20
 --- !u!1 &1251253811
 GameObject:
   m_ObjectHideFlags: 0
@@ -2968,9 +3012,46 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 224178953502169522, guid: cc9b7b181752a2941a69b1d39e722553,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.580348
+      objectReference: {fileID: 0}
+    - target: {fileID: 224178953502169522, guid: cc9b7b181752a2941a69b1d39e722553,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.580348
+      objectReference: {fileID: 0}
+    - target: {fileID: 224178953502169522, guid: cc9b7b181752a2941a69b1d39e722553,
+        type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.580348
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc9b7b181752a2941a69b1d39e722553, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1450677195 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1602284412037704, guid: cc9b7b181752a2941a69b1d39e722553,
+    type: 2}
+  m_PrefabInternal: {fileID: 78990497}
+--- !u!95 &1450677196
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1450677195}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 899e1357168237c49ad3f8973db95c97, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1629839146
 GameObject:
   m_ObjectHideFlags: 0

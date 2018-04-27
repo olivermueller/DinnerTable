@@ -1,0 +1,49 @@
+<Languages>
+  <casualsetting>
+    <en>Casual Setting</en>
+    <da>Casual indstilling</da>
+    <de>Lässige Einstellung</de>
+  </casualsetting>
+
+  <formalsetting>
+    <en>Formal Setting</en>
+    <da>Formel indstilling</da>
+    <de>Formale Einstellung</de>
+  </formalsetting>
+
+  
+  <itisdesignedforeverydayuse>
+    <en>It is designed for everyday use. Includes: dinner plate and fork; salad plate and fork; knife; spoon; water and/or wine glasses; and linens</en>
+    <da>Den er designet til daglig brug. Inkluderer: tallerken og gaffel; Salat plade og gaffel; kniv; ske; vand og / eller vinglas og sengetøj</da>
+    <de>Es ist für den täglichen Gebrauch konzipiert. Inklusive: Teller und Gabel; Salat Teller und Gabel; Messer; Löffel; Wasser und / oder Weingläser; und Bettwäsche</de>
+  </itisdesignedforeverydayuse>
+
+  
+
+  <usuallyforfamilydinnersholidaysweddingsandsemiformalevents>
+    <en>Usually for family dinners, holidays, weddings and semi-formal events. Includes: dinner and fork; salad plate and fork; knife; bread and butter plate; butter knife; spoon; water and wine stemware; and linens.</en>
+    <da>Normalt til familie middage, helligdage, bryllupper og semi-formelle arrangementer. Inkluderer: middag og gaffel; Salat plade og gaffel; kniv; brød og smør plade; smørkniv; ske; vand og vin stemware; og sengetøj.</da>
+    <de>In der Regel für Familienessen, Ferien, Hochzeiten und halb-förmige Veranstaltungen. Beinhaltet: Abendessen und Gabel; Salat Teller und Gabel; Messer; Brot-und Butterteller; Buttermesser; Löffel; Wasser und Weingläser; und Bettwäsche.</de>
+  </usuallyforfamilydinnersholidaysweddingsandsemiformalevents>
+
+  <touchtoplace>
+    <en>Touch screen to place table cloth</en>
+    <da>Berør skærmen for at placere bordduge</da>
+    <de></de>
+  </touchtoplace>
+
+  <welldone>
+    <en>Well done!</en>
+    <da>Godt klaret!</da>
+    <de></de>
+  </welldone>
+
+  <scanarea>
+    <en>Scan Area</en>
+    <da>Scanningsområde</da>
+    <de></de>
+  </scanarea>
+  
+  
+
+</Languages>

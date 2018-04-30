@@ -103,14 +103,19 @@ public class CutlerySwitcher : MonoBehaviour {
 
 	}
 	*/
+    bool passed = false;
     public void Switch(){
         if (cutlery)
         {
             if (cutlery.index == cutlery.cutlery.Length)
             {
                 nextText.text = "Well done!".Translate();
-                XAPIStatement statement = new XAPIStatement(Settings.username, "mailto:" + Settings.email, "passed", "http:∕∕adlnet.gov∕expapi∕verbs∕passed", "http:∕∕adlnet.gov∕expapi∕activities∕DinnerTable", Settings.instance.currentScenario, "Completed " + Settings.instance.currentScenario);
-                Settings.instance.SEND(statement);
+                if (passed == false)
+                {
+                    XAPIStatement statement = new XAPIStatement(Settings.username, "mailto:" + Settings.email, "passed", "http:∕∕adlnet.gov∕expapi∕verbs∕passed", "http:∕∕adlnet.gov∕expapi∕activities∕DinnerTable", Settings.instance.currentScenario, "Completed " + Settings.instance.currentScenario);
+                    Settings.instance.SEND(statement);
+                    passed = true;
+                }
             }
             else{
                 cutlery.switchCutlery();

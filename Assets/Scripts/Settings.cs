@@ -41,7 +41,10 @@ public class Settings : MonoBehaviour {
                     GameObject.FindGameObjectWithTag("UsernameCanvas").GetComponent<Canvas>().enabled = true;
                 }
             }
-           
+            else
+            {
+                PlayerPrefs.DeleteAll();
+            }
 
         }
         else if (instance != this)

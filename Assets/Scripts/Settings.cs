@@ -18,13 +18,16 @@ public class Settings : MonoBehaviour {
     public static bool showEmailGUI = true;
     private XAPIStatement statement;
     public static List<string> languageBase;
+    public ExtensionMethod.Language  currentLang = ExtensionMethod.Language.en;
+    public  bool uniqueUsers = true;
     void Awake()
     {
-
-
+        
         if (instance == null)
         {
             instance = this;
+            if(uniqueUsers)
+            PlayerPrefs.DeleteAll();
             if (PlayerPrefs.GetString("Name").Length > 0 && PlayerPrefs.GetString("Email").Length > 0)
             {
                 username = PlayerPrefs.GetString("Name");
@@ -34,7 +37,6 @@ public class Settings : MonoBehaviour {
             }
             else
             {
-
                 GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>().enabled = false;
                 GameObject.FindGameObjectWithTag("UsernameCanvas").GetComponent<Canvas>().enabled = true;
             }
@@ -43,11 +45,37 @@ public class Settings : MonoBehaviour {
         else if (instance != this)
 
             Destroy(gameObject);
-
+        InitLang();
         DontDestroyOnLoad(gameObject);
 
     }
+    private void InitLang()
+    {
+        GameObject langMenuObj = GameObject.FindGameObjectWithTag("LanguageMenu");
+        
+        LanguageButton currentlyFocused = langMenuObj.transform.GetChild(0).GetComponent<LanguageButton>();
+        if (instance.currentLang != currentlyFocused.buttonLanguage)
+        {
+            for (int i = 0; i < langMenuObj.transform.GetChild(1).transform.childCount; i++)
+            {
+                if (langMenuObj.transform.GetChild(1).GetChild(i).GetComponent<LanguageButton>().buttonLanguage == instance.currentLang)
+                {
 
+                    GameObject replacementLang = langMenuObj.transform.GetChild(1).GetChild(i).gameObject;
+                    ExtensionMethod.Language oldLang = currentlyFocused.buttonLanguage;
+                    Sprite oldTexture = currentlyFocused.GetComponent<Image>().sprite;
+
+                    currentlyFocused.GetComponent<LanguageButton>().buttonLanguage = replacementLang.GetComponent<LanguageButton>().buttonLanguage;
+                    currentlyFocused.GetComponent<Image>().sprite = replacementLang.GetComponent<Image>().sprite;
+
+                    replacementLang.GetComponent<LanguageButton>().buttonLanguage = oldLang;
+                    replacementLang.GetComponent<Image>().sprite = oldTexture;
+                    break;
+                }
+            }
+        }
+        langMenuObj.transform.GetChild(1).gameObject.SetActive(false);
+    }
     bool once = true;
     public void ChangeLanguage()
     {
@@ -64,6 +92,7 @@ public class Settings : MonoBehaviour {
         {
             allTextObjects[i].text = languageBase[i].Translate();
         }
+        currentLang = ExtensionMethod.currentLanguage;
     }
 
     public WWW SEND(XAPIStatement statement)

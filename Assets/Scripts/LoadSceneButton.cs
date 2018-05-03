@@ -14,6 +14,8 @@ public class LoadSceneButton : MonoBehaviour, IPointerUpHandler, IPointerDownHan
 
     public void BackToMain()
     {
+        GameObject[] arPlanes = GameObject.FindGameObjectsWithTag("Plane");
+        
         XAPIStatement statement = new XAPIStatement(Settings.username, "mailto:" + Settings.email, "selected", "https:∕∕w3id.org∕xapi∕dod-isd∕verbs∕chose", "http:∕∕adlnet.gov∕expapi∕activities∕DinnerTable", "Main Screen", "Went to main screen");
         Settings.instance.SEND(statement);
         SceneManager.LoadScene(Settings.instance.mainMenuScene);

@@ -12,10 +12,14 @@ public class CutlerySwitcher : MonoBehaviour {
     bool isBallCreating = true;
     public GameObject cutleryPrefab;
     public bool useDebugMode = true;
-	
-	
-	// Update is called once per frame
-	void Update () {
+    private void Awake()
+    {
+        ARKitWorldTrackingSessionConfiguration sessionConfig = new ARKitWorldTrackingSessionConfiguration(UnityARAlignment.UnityARAlignmentGravity, UnityARPlaneDetection.Horizontal);
+        UnityARSessionNativeInterface.GetARSessionNativeInterface().RunWithConfigAndOptions(sessionConfig, UnityARSessionRunOption.ARSessionRunOptionRemoveExistingAnchors | UnityARSessionRunOption.ARSessionRunOptionResetTracking);
+    }
+
+    // Update is called once per frame
+    void Update () {
         
 
         if(!cutlery)

@@ -14,10 +14,7 @@ public class ChangeCutlery : MonoBehaviour {
 
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
     public void switchCutlery(){
         if(index<cutlery.Length)
         {

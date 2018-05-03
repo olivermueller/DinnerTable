@@ -22,30 +22,24 @@ public class Settings : MonoBehaviour {
     public  bool uniqueUsers = true;
     void Awake()
     {
-
+        
         if (instance == null)
         {
             instance = this;
-            if (!uniqueUsers)
+            if(instance.uniqueUsers) PlayerPrefs.DeleteAll();
+            if (PlayerPrefs.GetString("Name").Length > 0 && PlayerPrefs.GetString("Email").Length > 0)
             {
-                if (PlayerPrefs.GetString("Name").Length > 0 && PlayerPrefs.GetString("Email").Length > 0)
-                {
-                    username = PlayerPrefs.GetString("Name");
-                    email = PlayerPrefs.GetString("Email");
-                    XAPIStatement statement = new XAPIStatement(username, "mailto:" + email, "started", "http:∕∕adlnet.gov∕expapi∕verbs∕initialized", "http:∕∕adlnet.gov∕expapi∕activities∕DinnerTable", "Dinner Table", "Started Dinner Table");
-                    SEND(statement);
-                }
-                else
-                {
-                    GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>().enabled = false;
-                    GameObject.FindGameObjectWithTag("UsernameCanvas").GetComponent<Canvas>().enabled = true;
-                }
+                username = PlayerPrefs.GetString("Name");
+                email = PlayerPrefs.GetString("Email");
+                XAPIStatement statement = new XAPIStatement(username, "mailto:" + email, "started", "http:∕∕adlnet.gov∕expapi∕verbs∕initialized", "http:∕∕adlnet.gov∕expapi∕activities∕DinnerTable", "Dinner Table", "Started Dinner Table");
+                SEND(statement);
             }
             else
             {
-                PlayerPrefs.DeleteAll();
+                GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>().enabled = false;
+                GameObject.FindGameObjectWithTag("UsernameCanvas").GetComponent<Canvas>().enabled = true;
             }
-
+            
         }
         else if (instance != this)
 

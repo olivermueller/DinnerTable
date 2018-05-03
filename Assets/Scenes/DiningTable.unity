@@ -1830,7 +1830,7 @@ MonoBehaviour:
   startAlignment: 0
   planeDetection: 1
   getPointCloud: 1
-  enableLightEstimation: 1
+  enableLightEstimation: 0
 --- !u!4 &1121666033
 Transform:
   m_ObjectHideFlags: 0
